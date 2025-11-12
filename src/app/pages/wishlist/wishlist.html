@@ -1,0 +1,15 @@
+<h1>Список бажаного</h1>
+
+<div *ngIf="wishlistGames.length === 0">
+  <p>Ваш список бажаного порожній. Додайте ігри на Головній сторінці!</p>
+</div>
+
+<div class="game-grid" *ngIf="wishlistGames.length > 0">
+  
+    <app-game-card 
+    *ngFor="let game of wishlistGames" 
+    [game]="game"
+    [context]="'wishlist'"  
+    (gameDeleted)="handleGameDeleted($event)">
+  </app-game-card>
+</div>

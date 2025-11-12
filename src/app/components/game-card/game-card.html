@@ -1,0 +1,35 @@
+<div class="game-card" *ngIf="game">
+  
+  <img [src]="game.background_image" [alt]="game.name" class="game-image">
+  
+  <div class="game-info">
+    <h3>{{ game.name }}</h3>
+    <div class="divider"></div> 
+
+    <div class="rating-container">
+      <p><strong>Дата випуску:</strong> {{ game.released | date: 'dd.MM.yyyy' }}</p>
+
+      <span *ngIf="game.metacritic" class="metacritic-badge">
+        {{ game.metacritic }}
+      </span>
+    </div>
+
+    <div class="genres-container">
+      <span *ngFor="let genre of game.genres" class="genre-tag">
+        {{ genre.name }}
+      </span>
+    </div>
+  </div>
+
+  <div class="game-actions" *ngIf="context === 'browse'">
+    <button (click)="onAddToWishlist()">Хочу зіграти</button>
+    <button (click)="onAddToPlayed()">Вже грав</button>
+  </div>
+
+  <div class="game-actions" *ngIf="context === 'wishlist' || context === 'played'">
+    <button class="button-delete" (click)="onDelete()">
+      {{ context === 'wishlist' ? 'Видалити з бажаного' : 'Видалити зіграних' }}
+    </button>
+  </div>
+
+</div>

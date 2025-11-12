@@ -1,0 +1,17 @@
+<nav class="navbar">
+
+  <div class="navbar-brand">
+    GamePlanner
+  </div>
+
+  <div class="navbar-links">
+    <a routerLink="/">Головна</a>
+    <a routerLink="/wishlist">Бажане</a>
+    <a routerLink="/played">Зігране</a>
+  </div>
+
+  <button (click)="toggleTheme()" class="theme-toggle">
+    <span *ngIf="themeService.getCurrentTheme() === 'light'">🌙</span>
+    <span *ngIf="themeService.getCurrentTheme() === 'dark'">☀️</span>
+  </button>
+</nav>

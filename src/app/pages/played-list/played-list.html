@@ -1,0 +1,15 @@
+<h1>Зіграні ігри</h1>
+
+<div *ngIf="playedGames.length === 0">
+  <p>Ви ще не додали жодної зіграної гри.</p>
+</div>
+
+<div class="game-grid" *ngIf="playedGames.length > 0">
+  
+  <app-game-card 
+    *ngFor="let game of playedGames" 
+    [game]="game"
+    [context]="'played'"
+    (gameDeleted)="handleGameDeleted($event)">
+  </app-game-card>
+</div>

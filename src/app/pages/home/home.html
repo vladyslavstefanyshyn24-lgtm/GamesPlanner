@@ -1,0 +1,13 @@
+<h1>Новинки</h1>
+
+<div *ngIf="isLoading">
+  <p>Завантаження ігор...</p>
+</div>
+
+<div *ngIf="error">
+  <p style="color: red;">{{ error }}</p>
+</div>
+
+<div class="game-grid" *ngIf="!isLoading && !error">
+  <app-game-card *ngFor="let g of games" [game]="g"></app-game-card>
+</div>
