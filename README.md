@@ -1,6 +1,6 @@
-# GmsPlanner
+# GamePlanner
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.
 
 ## Development server
 
@@ -29,7 +29,6 @@ ng generate --help
 ## Building
 
 To build the project run:
-
 
 ```bash
 ng build
